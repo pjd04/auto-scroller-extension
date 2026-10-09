@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { width: 240px; margin: 0; padding: 14px; font: 13px system-ui, sans-serif; color: #111827; }
+  h1 { font-size: 14px; margin: 0 0 12px; }
+  button { width: 100%; padding: 10px; font-size: 14px; font-weight: 600; border: 0; border-radius: 8px;
+           background: #2563eb; color: #fff; cursor: pointer; }
+  button.paused { background: #16a34a; }
+  button.running { background: #dc2626; }
+  label { display: flex; justify-content: space-between; margin: 14px 0 6px; }
+  input[type=range] { width: 100%; }
+  .presets { display: flex; gap: 6px; margin-top: 6px; }
+  .presets span { flex: 1; text-align: center; padding: 4px 0; border: 1px solid #d1d5db; border-radius: 6px; cursor: pointer; }
+  .presets span:hover { background: #f3f4f6; }
+  .hint { color: #6b7280; font-size: 11px; margin-top: 12px; line-height: 1.4; }
+  .err { color: #dc2626; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+  <h1>Auto Scroll Reader</h1>
+  <button id="toggle">▶ Start</button>
+  <label for="speed"><span>Speed</span><span id="val">40 px/s</span></label>
+  <input id="speed" type="range" min="5" max="200" step="1" value="40">
+  <div class="presets">
+    <span data-v="20">Slow</span><span data-v="40">Medium</span><span data-v="80">Fast</span>
+  </div>
+  <div class="hint">
+    Shortcut: <b>Alt+Shift+S</b> to pause/resume.<br>
+    <b>Esc</b> pauses. Click the floating button on the page to pause/resume; double-click it to hide.
+  </div>
+  <div class="err" id="err"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
