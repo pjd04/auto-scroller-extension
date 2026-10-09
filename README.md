@@ -1,0 +1,1 @@
+Auto Scroller Extension
